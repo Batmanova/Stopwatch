@@ -1,24 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Stopwatch-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Stopwatch" customModule="Stopwatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ForrestGump" translatesAutoresizingMaskIntoConstraints="NO" id="A3U-YQ-xXq">
+                                <rect key="frame" x="0.0" y="44" width="390" height="800"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSj-GC-pHf" userLabel="Stop Watch Label">
+                                <rect key="frame" x="0.0" y="44" width="390" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="xDj-o5-TkH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="32"/>
+                                <color key="textColor" name="White"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="els-Ne-CKT">
+                                <rect key="frame" x="0.0" y="353" width="390" height="491"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="lapCell" id="KnK-xf-tW8" userLabel="lapCell" customClass="TableRow" customModule="Stopwatch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KnK-xf-tW8" id="Bp0-KZ-OLr">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="42"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCe-Qr-97a">
+                                                    <rect key="frame" x="20" y="11" width="350" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                    <color key="textColor" name="White"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OCe-Qr-97a" firstAttribute="top" secondItem="Bp0-KZ-OLr" secondAttribute="topMargin" id="6R2-QQ-1YO"/>
+                                                <constraint firstItem="OCe-Qr-97a" firstAttribute="leading" secondItem="Bp0-KZ-OLr" secondAttribute="leadingMargin" id="BHs-m3-hJS"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OCe-Qr-97a" secondAttribute="bottom" id="QcD-zn-4aQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OCe-Qr-97a" secondAttribute="trailing" id="wce-q0-pEg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lapLabel" destination="OCe-Qr-97a" id="pJf-Bs-Bpt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="blM-sQ-Cs2"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Syc-Fr-5EV"/>
+                                </connections>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pea-sg-wXN">
+                                <rect key="frame" x="0.0" y="252" width="390" height="22"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZa-VZ-v7A">
+                                        <rect key="frame" x="0.0" y="0.0" width="195" height="22"/>
+                                        <color key="tintColor" name="White"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="lap" image="plus" catalog="system">
+                                            <color key="titleColor" name="White"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="lapActionWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VKp-Pu-GEa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGb-Ws-x47">
+                                        <rect key="frame" x="195" y="0.0" width="195" height="22"/>
+                                        <color key="tintColor" name="White"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Start" image="play.fill" catalog="system">
+                                            <color key="titleColor" name="White"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startStopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3FY-gC-P2B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pea-sg-wXN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="31t-2e-EGU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pea-sg-wXN" secondAttribute="trailing" id="5j0-Bz-nTE"/>
+                            <constraint firstItem="zSj-GC-pHf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8E5-qI-pai"/>
+                            <constraint firstItem="els-Ne-CKT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G6t-LF-iYX"/>
+                            <constraint firstItem="pea-sg-wXN" firstAttribute="top" secondItem="zSj-GC-pHf" secondAttribute="bottom" constant="8" id="IsI-k8-a2S"/>
+                            <constraint firstItem="A3U-YQ-xXq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="M1Z-uC-gZj"/>
+                            <constraint firstAttribute="bottom" secondItem="els-Ne-CKT" secondAttribute="bottom" id="RCr-Jl-YCg"/>
+                            <constraint firstItem="pea-sg-wXN" firstAttribute="centerX" secondItem="A3U-YQ-xXq" secondAttribute="centerX" id="Yhi-VG-KAw"/>
+                            <constraint firstItem="els-Ne-CKT" firstAttribute="top" secondItem="pea-sg-wXN" secondAttribute="bottom" constant="79" id="a2f-RZ-htQ"/>
+                            <constraint firstItem="A3U-YQ-xXq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aqe-ZT-Bqe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zSj-GC-pHf" secondAttribute="trailing" id="b0a-xa-AUw"/>
+                            <constraint firstAttribute="bottom" secondItem="A3U-YQ-xXq" secondAttribute="bottom" id="ciB-G4-eRr"/>
+                            <constraint firstItem="A3U-YQ-xXq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dVU-pL-Gox"/>
+                            <constraint firstItem="zSj-GC-pHf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eGe-9N-2xK"/>
+                            <constraint firstItem="els-Ne-CKT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hm2-qt-EP9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="StopWatchLabel" destination="zSj-GC-pHf" id="bM7-1K-WGS"/>
+                        <outlet property="stopWatchLabel" destination="zSj-GC-pHf" id="I59-Xr-AFh"/>
+                        <outlet property="table" destination="els-Ne-CKT" id="AVJ-xU-Z2V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-17.39130434782609" y="38.839285714285715"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ForrestGump" width="390" height="843.66668701171875"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
