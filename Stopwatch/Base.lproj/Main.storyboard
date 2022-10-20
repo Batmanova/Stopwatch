@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ForrestGump" translatesAutoresizingMaskIntoConstraints="NO" id="A3U-YQ-xXq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ForrestGump" translatesAutoresizingMaskIntoConstraints="NO" id="A3U-YQ-xXq">
                                 <rect key="frame" x="0.0" y="44" width="390" height="800"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSj-GC-pHf" userLabel="Stop Watch Label">
@@ -29,6 +28,7 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="32"/>
                                 <color key="textColor" name="White"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="els-Ne-CKT">
                                 <rect key="frame" x="0.0" y="353" width="390" height="491"/>
@@ -74,7 +74,7 @@
                                         <color key="tintColor" name="White"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="lap" image="plus" catalog="system">
+                                        <state key="normal" title="Lap" image="plus" catalog="system">
                                             <color key="titleColor" name="White"/>
                                         </state>
                                         <connections>
@@ -118,6 +118,7 @@
                     </view>
                     <connections>
                         <outlet property="StopWatchLabel" destination="zSj-GC-pHf" id="bM7-1K-WGS"/>
+                        <outlet property="lapButton" destination="cZa-VZ-v7A" id="RqS-qe-vb6"/>
                         <outlet property="stopWatchLabel" destination="zSj-GC-pHf" id="I59-Xr-AFh"/>
                         <outlet property="table" destination="els-Ne-CKT" id="AVJ-xU-Z2V"/>
                     </connections>
